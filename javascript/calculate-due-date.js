@@ -6,6 +6,7 @@ function calculateDueDate(submitDate, turnAroundTime) {
     let dueDate = new Date(submitDate.getTime());
 
     let daysToAdd = Math.floor(turnAroundTime / WORK_DAY_LENGTH);
+    daysToAdd = daysToAdd + Math.floor(daysToAdd/5)*2;
     let hoursToAdd = turnAroundTime % WORK_DAY_LENGTH;
 
     dueDate.setDate(dueDate.getDate() + daysToAdd);
