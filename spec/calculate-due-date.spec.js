@@ -17,4 +17,11 @@ describe('calculateDueDate', function(){
         turnAroudTimeInHours = 10;
         expect(calculateDueDate(submitDate, turnAroudTimeInHours)).toEqual(dueDate);
     });
+
+    it('should calculate the due date to be 2018-03-14 10AM when the submit date: 2018-03-12 (Monday) 4PM and the turnaroudtime: 10 hours', function() {
+        submitDate = new Date('2018-03-12T16:00:00');
+        dueDate = new Date('2018-03-14T10:00:00');
+        turnAroudTimeInHours = 10;
+        expect(calculateDueDate(submitDate, turnAroudTimeInHours)).toEqual(dueDate);
+    });
 });
