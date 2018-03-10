@@ -1,4 +1,10 @@
 function calculateDueDate(submitDate, turnAroundTime) {
-    submitDate.setHours(submitDate.getHours()+ turnAroundTime);
-    return submitDate;
+    let dueDate = new Date(submitDate.getTime());
+
+    let daysToAdd = Math.floor(turnAroundTime/8);
+    let hoursToAdd = turnAroundTime%8;
+
+    dueDate.setDate(dueDate.getDate() + daysToAdd);
+    dueDate.setHours(dueDate.getHours() + hoursToAdd);
+    return dueDate;
 };
